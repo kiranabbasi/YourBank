@@ -1,13 +1,101 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #1E1E1E;
+  color: #ffff;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Lexend", Verdana, Geneva, Tahoma, sans-serif; 
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* CSS to remove the border on focus and input */
+input:focus,
+input {
+    border: none; /* Remove the border */
+    outline: none; /* Remove the default outline */
 }
+
+/* CSS to hide the number input spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove the spinner */
+    margin: 0; /* Remove the margin */
+}
+
+input[type="number"] {
+  border-bottom: #CAFF33;
+    -moz-appearance: textfield; /* Remove the spinner for Firefox */
+}
+
+
+.tab-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  border-radius: 26px;
+  background-color: #CAFF33; /* or your bg-secondary color */
+  transition: left 0.5s ease;
+  z-index: 0;
+
+}
+
+.tab-bg.left-50 {
+  left: 50%;
+}
+
+.tab-container button {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+  background: none; /* remove the background color from buttons */
+  border: none; /* remove the border from buttons */
+}
+
+
+/* Custom styles for range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #CAFF33 0%, #CAFF33 var(--percent), #e5e7eb var(--percent), #e5e7eb 100%);
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background-color: #CAFF33;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background-color: #CAFF33; 
+  cursor: pointer;
+}
+
+
+
