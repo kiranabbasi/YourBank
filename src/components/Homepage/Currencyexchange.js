@@ -13,26 +13,27 @@ const currencyOptions = [
 ];
 
 const CURRENCY_API_URL = 'https://v6.exchangerate-api.com/v6/4e02024c60fa109a0d589f47/latest/USD';
-const CACHE_EXPIRY = 43200000; // 12 hours in milliseconds
+const CACHE_EXPIRY = 86400000; // 24 hours in milliseconds
 
 const CurrencyExchange = () => {
     const [fromCurrency, setFromCurrency] = useState('USD');
     const [toCurrency, setToCurrency] = useState('PKR');
     const [amount, setAmount] = useState('30'); // Initialize amount to 30 USD
     const [result, setResult] = useState('');
-    const [cache, setCache] = useState({ data: null, timestamp: 0 });
-
+    
     const convertCurrency = useCallback(async (amount, fromCurrency, toCurrency) => {
         const now = Date.now();
-        if (cache.data && (now - cache.timestamp < CACHE_EXPIRY)) {
-            const { data } = cache;
-            // Check if the required currencies are present in the cache
-            if (data[fromCurrency] && data[toCurrency]) {
-                let fromRate = data[fromCurrency];
-                let toRate = data[toCurrency];
+        const cachedData = JSON.parse(localStorage.getItem('currencyData'));
+        const cacheTimestamp = localStorage.getItem('cacheTimestamp');
+
+        if (cachedData && cacheTimestamp && (now - cacheTimestamp < CACHE_EXPIRY)) {
+            // Use cached data
+            if (cachedData[fromCurrency] && cachedData[toCurrency]) {
+                let fromRate = cachedData[fromCurrency];
+                let toRate = cachedData[toCurrency];
                 return (amount / fromRate) * toRate;
             } else {
-                console.error('Currency not found in cache data');
+                console.error('Currency not found in cached data');
                 return null;
             }
         }
@@ -43,9 +44,9 @@ const CurrencyExchange = () => {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             let data = await response.json();
-            // Check if the data structure matches expectations
             if (data && data.conversion_rates) {
-                setCache({ data: data.conversion_rates, timestamp: now });
+                localStorage.setItem('currencyData', JSON.stringify(data.conversion_rates));
+                localStorage.setItem('cacheTimestamp', now.toString());
 
                 let fromRate = data.conversion_rates[fromCurrency];
                 let toRate = data.conversion_rates[toCurrency];
@@ -62,9 +63,9 @@ const CurrencyExchange = () => {
             }
         } catch (error) {
             console.error('Error fetching exchange rates:', error);
-            return null; // Return null if fetching fails
+            return null;
         }
-    }, [cache]);
+    }, []);
 
     const handleExchange = useCallback(async () => {
         const convertedAmount = await convertCurrency(amount, fromCurrency, toCurrency);

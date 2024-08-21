@@ -25,7 +25,7 @@ const HeroPage = () => {
                 </div>
             </div>
             <div id='right-half' className='min-[900px]:w-11/12 md:w-4/6 w-10/12 min-[900px]:m-0 m-auto  md:p-6 '>
-                <div className='border  border-zinc-700 xl:w-10/12 lg:w-11/12 p-4 m-auto rounded-lg relative'>
+                <div className='border  border-zinc-700 xl:w-9/12 lg:w-10/12 p-4 m-auto rounded-lg relative'>
                 <img className='absolute lg:-right-20 md:-right-20 -right-5 -top-10  lg:w-80 md:w-72 w-56' src={Herodesignbg} alt="bg-img" /> 
                     <div>
                         <div className='flex gap-2 bg-primary p-3 rounded-xl absolute -top-11 md:-left-12 -left-4'>

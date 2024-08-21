@@ -1,49 +1,49 @@
 import React from 'react';
-import  {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Navbar from './components/CommonSections/Navbar.jsx';
 import HomePage from './components/Homepage/HomePage.jsx';
 import CareersPage from './components/CareersPage/Careers.jsx';
 import AboutPage from './components/AboutPage/About.jsx';
-import SecurityPage from './components/SecurityPage/Security.jsx'
+import SecurityPage from './components/SecurityPage/Security.jsx';
 import SignUpPage from './components/SignUp/SignUp.jsx';
 import LoginPage from './components/SignUp/Login.jsx';
-
+import NotFoundPage from './components/NotFoundPage';  // Import the NotFoundPage
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <><Navbar/> <HomePage/></>
+      element: <><Navbar/><HomePage/></>,
     },
     {
       path: "/Careers",
-      element: <><Navbar/><CareersPage/></>
+      element: <><Navbar/><CareersPage/></>,
     },
     {
       path: "/About",
-      element: <><Navbar/><AboutPage/></>
+      element: <><Navbar/><AboutPage/></>,
     },
     {
       path: "/Security",
-      element: <><Navbar/><SecurityPage/></>
+      element: <><Navbar/><SecurityPage/></>,
     },
     {
       path: "/SignUp",
-      element: <><Navbar/><SignUpPage/></>
+      element: <><Navbar/><SignUpPage/></>,
     },
     {
       path: "/Login",
-      element: <><Navbar/><LoginPage/></>
+      element: <><Navbar/><LoginPage/></>,
+    },
+    {
+      path: "*",  // Wildcard route for undefined paths
+      element: <><Navbar/><NotFoundPage/></>,
     }
-
-  ])
-
+  ]);
 
   return (
-    <>
-    <RouterProvider router = {router} />
-    </>
-  )
+    <RouterProvider router={router} />
+  );
 }
 
 export default App;
