@@ -1,48 +1,51 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Navbar from './components/CommonSections/Navbar.jsx';
-import HomePage from './components/Homepage/HomePage.jsx';
-import CareersPage from './components/CareersPage/Careers.jsx';
-import AboutPage from './components/AboutPage/About.jsx';
-import SecurityPage from './components/SecurityPage/Security.jsx';
-import SignUpPage from './components/SignUp/SignUp.jsx';
-import LoginPage from './components/SignUp/Login.jsx';
-import NotFoundPage from './components/NotFoundPage';  // Import the NotFoundPage
+import Loading from './components/CommonSections/Loading.jsx';
+
+const HomePage = lazy(() => import('./components/Homepage/HomePage.jsx'));
+const CareersPage = lazy(() => import('./components/CareersPage/Careers.jsx'));
+const AboutPage = lazy(() => import('./components/AboutPage/About.jsx'));
+const SecurityPage = lazy(() => import('./components/SecurityPage/Security.jsx'));
+const SignUpPage = lazy(() => import('./components/SignUp/SignUp.jsx'));
+const LoginPage = lazy(() => import('./components/SignUp/Login.jsx'));
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
-      element: <><Navbar/><HomePage/></>,
+      element: <><Navbar/><HomePage/></>
     },
     {
       path: "/Careers",
-      element: <><Navbar/><CareersPage/></>,
+      element: <><Navbar/><CareersPage/></>
     },
     {
       path: "/About",
-      element: <><Navbar/><AboutPage/></>,
+      element: <><Navbar/><AboutPage/></>
     },
     {
       path: "/Security",
-      element: <><Navbar/><SecurityPage/></>,
+      element: <><Navbar/><SecurityPage/></>
     },
     {
       path: "/SignUp",
-      element: <><Navbar/><SignUpPage/></>,
+      element: <><Navbar/><SignUpPage/></>
     },
     {
       path: "/Login",
-      element: <><Navbar/><LoginPage/></>,
+      element: <><Navbar/><LoginPage/></>
     },
     {
-      path: "*",  // Wildcard route for undefined paths
-      element: <><Navbar/><NotFoundPage/></>,
+      path: "*",
+      element: <Navigate to="/" replace />, // Redirect to homepage
     }
   ]);
 
   return (
-    <RouterProvider router={router} />
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router} />
+    </Suspense>
   );
 }
 

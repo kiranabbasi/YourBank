@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Herodesignbg from '../../assets/homepagedesign.png';
 import Verifiedsvg from '../../assets/verified.svg';
 import Exchangeicon from '../../assets/exchange.svg';
@@ -18,10 +19,10 @@ const HeroPage = () => {
                     <p className='text-xm font-extralight text-zinc-300'>At YourBank, our mission is to provide comprehensive banking solutions that empower individuals and businesses to achieve their financial goals. We are committed to delivering personalized and innovative services that prioritize our customers' needs.</p>
                 </div>
                 <div>
-                    <a href="#login">
-                        <button className='sm:px-4 px-2 sm:py-3 py-2 rounded-full my-6 bg-secondary text-black  text-base  hover:translate-x-1 ease-out duration-1000 '>
+                <NavLink href="#login" to="/SignUp">
+                        <button className='px-4 py-3 mt-8 rounded-full  bg-secondary text-black  text-sm font-normal hover:translate-x-1 ease-out duration-500 hover:font-medium'>
                             Open Account</button>
-                    </a>
+                    </NavLink>
                 </div>
             </div>
             <div id='right-half' className='min-[900px]:w-11/12 md:w-4/6 w-10/12 min-[900px]:m-0 m-auto  md:p-6 '>

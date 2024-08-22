@@ -20,17 +20,17 @@ const CurrencyExchange = () => {
     const [toCurrency, setToCurrency] = useState('PKR');
     const [amount, setAmount] = useState('30'); // Initialize amount to 30 USD
     const [result, setResult] = useState('');
-    
+
     const convertCurrency = useCallback(async (amount, fromCurrency, toCurrency) => {
         const now = Date.now();
         const cachedData = JSON.parse(localStorage.getItem('currencyData'));
-        const cacheTimestamp = localStorage.getItem('cacheTimestamp');
+        const cacheTimestamp = parseInt(localStorage.getItem('cacheTimestamp'), 10);
 
         if (cachedData && cacheTimestamp && (now - cacheTimestamp < CACHE_EXPIRY)) {
-            // Use cached data
-            if (cachedData[fromCurrency] && cachedData[toCurrency]) {
-                let fromRate = cachedData[fromCurrency];
-                let toRate = cachedData[toCurrency];
+            // Use cached data if it's still valid
+            let fromRate = cachedData[fromCurrency];
+            let toRate = cachedData[toCurrency];
+            if (fromRate && toRate) {
                 return (amount / fromRate) * toRate;
             } else {
                 console.error('Currency not found in cached data');
@@ -38,12 +38,13 @@ const CurrencyExchange = () => {
             }
         }
 
+        // Fetch new data from the API if no valid cache exists
         try {
-            let response = await fetch(CURRENCY_API_URL);
+            const response = await fetch(CURRENCY_API_URL);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            let data = await response.json();
+            const data = await response.json();
             if (data && data.conversion_rates) {
                 localStorage.setItem('currencyData', JSON.stringify(data.conversion_rates));
                 localStorage.setItem('cacheTimestamp', now.toString());

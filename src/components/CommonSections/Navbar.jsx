@@ -50,12 +50,12 @@ const Navbar = () => {
 
           <div className= {`flex list-none w-inherit lg:relative fixed z-50  lg:gap-4 gap-10  lg:bottom-0 bottom-44 -right-4 transition-transform duration-300 ${isOpen ? 'transform -translate-x-20' : 'transfrom lg:translate-x-0 translate-x-full'}`}>
             <NavLink className={(e) => e.isActive ? 'bg-secondary text-black rounded-full' : ''} to="/SignUp" onClick={() => setIsOpen(false) }>
-              <li className='px-4 py-2 rounded-full hover:bg-[#CAFF33] hover:text-black duration-500 hover:scale-105 ease-linear lg:bg-inherit bg-secondary lg:text-white text-black'>
+              <li className='px-4 py-2 rounded-full hover:bg-[#CAFF33] hover:text-black duration-500 hover:scale-105 ease-linear lg:bg-inherit bg-secondary lg:text-inherit text-black'>
                 Sign Up
               </li>
             </NavLink>
             <NavLink className={(e) => e.isActive ? 'bg-secondary text-black rounded-full' : ''} to="/Login" onClick={() => setIsOpen(false)}>
-              <li className='px-4 py-2 rounded-full hover:bg-secondary hover:text-black duration-500 hover:scale-105 ease-linear lg:bg-inherit bg-secondary lg:text-white text-black'>
+              <li className='px-4 py-2 rounded-full hover:bg-secondary hover:text-black duration-500 hover:scale-105 ease-linear lg:bg-inherit bg-secondary lg:text-inherit text-black'>
                 Login
               </li>
             </NavLink>
