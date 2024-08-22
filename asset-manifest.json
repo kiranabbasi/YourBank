@@ -1,8 +1,15 @@
 {
   "files": {
-    "main.css": "/YourBank/static/css/main.d36ba346.css",
-    "main.js": "/YourBank/static/js/main.e70a7c96.js",
-    "static/js/453.965cd36a.chunk.js": "/YourBank/static/js/453.965cd36a.chunk.js",
+    "main.css": "/YourBank/static/css/main.ec54004a.css",
+    "main.js": "/YourBank/static/js/main.65575938.js",
+    "static/js/316.632fc2be.chunk.js": "/YourBank/static/js/316.632fc2be.chunk.js",
+    "static/js/227.444b3aef.chunk.js": "/YourBank/static/js/227.444b3aef.chunk.js",
+    "static/js/652.64c611e4.chunk.js": "/YourBank/static/js/652.64c611e4.chunk.js",
+    "static/js/145.1e1d15dc.chunk.js": "/YourBank/static/js/145.1e1d15dc.chunk.js",
+    "static/js/408.7ca95e59.chunk.js": "/YourBank/static/js/408.7ca95e59.chunk.js",
+    "static/js/253.319312ef.chunk.js": "/YourBank/static/js/253.319312ef.chunk.js",
+    "static/js/453.64aef815.chunk.js": "/YourBank/static/js/453.64aef815.chunk.js",
+    "static/js/427.dc9cb453.chunk.js": "/YourBank/static/js/427.dc9cb453.chunk.js",
     "static/media/cardbgimg.png": "/YourBank/static/media/cardbgimg.0c2cbd064cc70c5bf913.png",
     "static/media/securityheroimg.png": "/YourBank/static/media/securityheroimg.6c51cb00a2b5ef2e0708.png",
     "static/media/careersbgimg1.png": "/YourBank/static/media/careersbgimg1.06280fb4a9b9025f3c97.png",
@@ -56,12 +63,19 @@
     "static/media/rightarrowicon.svg": "/YourBank/static/media/rightarrowicon.8c430274c3ba339dfee85ee5053ee50e.svg",
     "static/media/leftarrowicon.svg": "/YourBank/static/media/leftarrowicon.5aa5ad8945bbe3b7b695bb3390a1ad07.svg",
     "static/media/downarrow.svg": "/YourBank/static/media/downarrow.c9f3d8545177832ed7998e2da37da06a.svg",
-    "main.d36ba346.css.map": "/YourBank/static/css/main.d36ba346.css.map",
-    "main.e70a7c96.js.map": "/YourBank/static/js/main.e70a7c96.js.map",
-    "453.965cd36a.chunk.js.map": "/YourBank/static/js/453.965cd36a.chunk.js.map"
+    "main.ec54004a.css.map": "/YourBank/static/css/main.ec54004a.css.map",
+    "main.65575938.js.map": "/YourBank/static/js/main.65575938.js.map",
+    "316.632fc2be.chunk.js.map": "/YourBank/static/js/316.632fc2be.chunk.js.map",
+    "227.444b3aef.chunk.js.map": "/YourBank/static/js/227.444b3aef.chunk.js.map",
+    "652.64c611e4.chunk.js.map": "/YourBank/static/js/652.64c611e4.chunk.js.map",
+    "145.1e1d15dc.chunk.js.map": "/YourBank/static/js/145.1e1d15dc.chunk.js.map",
+    "408.7ca95e59.chunk.js.map": "/YourBank/static/js/408.7ca95e59.chunk.js.map",
+    "253.319312ef.chunk.js.map": "/YourBank/static/js/253.319312ef.chunk.js.map",
+    "453.64aef815.chunk.js.map": "/YourBank/static/js/453.64aef815.chunk.js.map",
+    "427.dc9cb453.chunk.js.map": "/YourBank/static/js/427.dc9cb453.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d36ba346.css",
-    "static/js/main.e70a7c96.js"
+    "static/css/main.ec54004a.css",
+    "static/js/main.65575938.js"
   ]
 }
