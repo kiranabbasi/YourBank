@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/YourBank/static/css/main.00657e3d.css",
-    "main.js": "/YourBank/static/js/main.e4f82d37.js",
+    "main.css": "/YourBank/static/css/main.d36ba346.css",
+    "main.js": "/YourBank/static/js/main.e70a7c96.js",
     "static/js/453.965cd36a.chunk.js": "/YourBank/static/js/453.965cd36a.chunk.js",
     "static/media/cardbgimg.png": "/YourBank/static/media/cardbgimg.0c2cbd064cc70c5bf913.png",
     "static/media/securityheroimg.png": "/YourBank/static/media/securityheroimg.6c51cb00a2b5ef2e0708.png",
@@ -56,12 +56,12 @@
     "static/media/rightarrowicon.svg": "/YourBank/static/media/rightarrowicon.8c430274c3ba339dfee85ee5053ee50e.svg",
     "static/media/leftarrowicon.svg": "/YourBank/static/media/leftarrowicon.5aa5ad8945bbe3b7b695bb3390a1ad07.svg",
     "static/media/downarrow.svg": "/YourBank/static/media/downarrow.c9f3d8545177832ed7998e2da37da06a.svg",
-    "main.00657e3d.css.map": "/YourBank/static/css/main.00657e3d.css.map",
-    "main.e4f82d37.js.map": "/YourBank/static/js/main.e4f82d37.js.map",
+    "main.d36ba346.css.map": "/YourBank/static/css/main.d36ba346.css.map",
+    "main.e70a7c96.js.map": "/YourBank/static/js/main.e70a7c96.js.map",
     "453.965cd36a.chunk.js.map": "/YourBank/static/js/453.965cd36a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.00657e3d.css",
-    "static/js/main.e4f82d37.js"
+    "static/css/main.d36ba346.css",
+    "static/js/main.e70a7c96.js"
   ]
 }
